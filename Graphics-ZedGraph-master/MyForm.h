@@ -71,6 +71,10 @@ namespace Graph {
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::RichTextBox^ textBoxStats;
+	private: System::Windows::Forms::Label^ labelStats;
 
 
 
@@ -124,6 +128,10 @@ namespace Graph {
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->textBoxStats = (gcnew System::Windows::Forms::RichTextBox());
+			this->labelStats = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -219,7 +227,7 @@ namespace Graph {
 			// 
 			// Column7
 			// 
-			this->Column7->HeaderText = L"h_(i-1)";
+			this->Column7->HeaderText = L"h_i";
 			this->Column7->MinimumWidth = 6;
 			this->Column7->Name = L"Column7";
 			this->Column7->Width = 70;
@@ -267,7 +275,7 @@ namespace Graph {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(211, 530);
+			this->textBox5->Location = System::Drawing::Point(224, 530);
 			this->textBox5->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(70, 26);
@@ -277,7 +285,7 @@ namespace Graph {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(182, 533);
+			this->label5->Location = System::Drawing::Point(195, 533);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(27, 20);
@@ -286,17 +294,17 @@ namespace Graph {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(85, 530);
+			this->textBox3->Location = System::Drawing::Point(73, 530);
 			this->textBox3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(68, 26);
 			this->textBox3->TabIndex = 20;
-			this->textBox3->Text = L"0,1";
+			this->textBox3->Text = L"0,01";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(56, 536);
+			this->label3->Location = System::Drawing::Point(44, 536);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(18, 20);
@@ -305,7 +313,7 @@ namespace Graph {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(211, 477);
+			this->textBox2->Location = System::Drawing::Point(224, 477);
 			this->textBox2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(68, 26);
@@ -315,7 +323,7 @@ namespace Graph {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(182, 481);
+			this->label2->Location = System::Drawing::Point(195, 481);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(18, 20);
@@ -324,7 +332,7 @@ namespace Graph {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(85, 477);
+			this->textBox1->Location = System::Drawing::Point(73, 477);
 			this->textBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(70, 26);
@@ -334,7 +342,7 @@ namespace Graph {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(56, 477);
+			this->label1->Location = System::Drawing::Point(44, 477);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(18, 20);
@@ -343,7 +351,7 @@ namespace Graph {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(211, 581);
+			this->textBox4->Location = System::Drawing::Point(73, 634);
 			this->textBox4->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(68, 26);
@@ -354,7 +362,7 @@ namespace Graph {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(174, 584);
+			this->label4->Location = System::Drawing::Point(36, 637);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(35, 20);
@@ -375,7 +383,7 @@ namespace Graph {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(85, 581);
+			this->textBox6->Location = System::Drawing::Point(73, 581);
 			this->textBox6->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(68, 26);
@@ -385,18 +393,64 @@ namespace Graph {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(32, 584);
+			this->label6->Location = System::Drawing::Point(20, 584);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(49, 20);
 			this->label6->TabIndex = 26;
 			this->label6->Text = L"Nmax";
 			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(224, 584);
+			this->textBox7->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(68, 26);
+			this->textBox7->TabIndex = 29;
+			this->textBox7->Text = L"0,05";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(163, 587);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(53, 20);
+			this->label7->TabIndex = 28;
+			this->label7->Text = L"eps_b";
+			// 
+			// textBoxStats
+			// 
+			this->textBoxStats->Location = System::Drawing::Point(626, 505);
+			this->textBoxStats->Name = L"textBoxStats";
+			this->textBoxStats->Size = System::Drawing::Size(723, 231);
+			//this->textBoxStats->TabIndex = 30;
+			//this->textBoxStats->Text = L"";
+			this->textBoxStats->Multiline = true;
+			//this->textBoxStats->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->textBoxStats->ReadOnly = true;
+			this->textBoxStats->BackColor = System::Drawing::Color::FromArgb(240, 240, 240);
+			this->textBoxStats->Font = gcnew System::Drawing::Font(L"Consolas", 10);
+			this->textBoxStats->Text = L"Statistics will appear after clicking the Draw button...";
+			// 
+			// labelStats
+			// 
+			this->labelStats->AutoSize = true;
+			this->labelStats->Location = System::Drawing::Point(622, 477);
+			this->labelStats->Name = L"labelStats";
+			this->labelStats->Size = System::Drawing::Size(51, 20);
+			this->labelStats->TabIndex = 31;
+			this->labelStats->Text = L"Statistics:";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1424, 772);
+			this->Controls->Add(this->labelStats);
+			this->Controls->Add(this->textBoxStats);
+			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->label7);
 			this->Controls->Add(this->textBox6);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->checkBox1);
@@ -476,16 +530,24 @@ namespace Graph {
 		double u_0 = Convert::ToDouble(textBox5->Text);
 		bool control = checkBox1->Checked;
 		double eps = Convert::ToDouble(textBox4->Text);
-		double max_OLP = 0;
+		double eps_b = Convert::ToDouble(textBox7->Text);
 		double S;
 		double local_error;
+		double current_error;
 		int count_c1;
 		int count_c2;
 		int Nmax = Convert::ToInt32(textBox6->Text);
 
-		//StatisticsPair max_h;
-		//StatisticsPair min_h;
-		//StatisticsPair max_u_v;
+		//Statistics:
+		double max_OLP = 0;              // максимальная оценка локальной погрешности
+		int total_c1 = 0;                // общее число делений шага
+		int total_c2 = 0;                // общее число удвоений шага
+		double max_h = 0;                // максимальный шаг
+		double max_h_x;              // координата x для максимального шага
+		double min_h = 1e100;                // минимальный шаг
+		double min_h_x;              // координата x для минимального шага
+		double max_error = 0;            // максимальная погрешность |ui - vi|
+		double max_error_x;          // координата x для максимальной погрешности
 
 		// Интервал, где есть данные
 		double a = Convert::ToDouble(textBox1->Text);
@@ -508,7 +570,7 @@ namespace Graph {
 		double v2, u;
 
 		int count_iterations = 0;
-		while (x < b - 1e-10 && count_iterations < Nmax) {
+		while (abs(b - x) > eps_b && count_iterations < Nmax) {
 			if (control) {
 				count_c1 = 0;
 				count_c2 = 0;
@@ -518,9 +580,10 @@ namespace Graph {
 				while (!step_accepted) {
 					h = h_new;
 					// Проверяем, не выйдет ли шаг за границу b
-					if (x + h > b) {
+					if (x + h > b && x < b - eps_b) {
 						h = b - x;  // Уменьшаем шаг точно до границы
 					}
+
 					// Пытаемся сделать шаг с текущим h_current
 					step_accepted = StepWithControl(x, v, v2, h, eps, S);
 					local_error = S * 16;
@@ -534,13 +597,16 @@ namespace Graph {
 						count_c1++;
 					}
 				}
+				// Обновляем общие счетчики
+				total_c1 += count_c1;
+				total_c2 += count_c2;
 			}
 			else {
 				// Сохраняем текущее состояние
 				double x_current = x;
 				double v_current = v;
 				// Проверяем, не выйдет ли шаг за границу b
-				if (x + h > b) {
+				if (x + h > b && x < b - eps_b) {
 					h = b - x;  // Уменьшаем шаг точно до границы
 				}
 
@@ -557,6 +623,8 @@ namespace Graph {
 
 			u = exactSolution(x, u_0);
 
+			current_error = abs(u - v);
+
 			//Добавление на график
 			v_list->Add(x, v);
 			u_list->Add(x, u);
@@ -571,26 +639,71 @@ namespace Graph {
 			dataGridView1->Rows[count_iterations]->Cells[6]->Value = h;
 
 			dataGridView1->Rows[count_iterations]->Cells[9]->Value = u;
-			dataGridView1->Rows[count_iterations]->Cells[10]->Value = abs(u-v);
+			dataGridView1->Rows[count_iterations]->Cells[10]->Value = current_error;
 
 			if (control) {
 				dataGridView1->Rows[count_iterations]->Cells[5]->Value = local_error;
 				dataGridView1->Rows[count_iterations]->Cells[7]->Value = count_c1;
 				dataGridView1->Rows[count_iterations]->Cells[8]->Value = count_c2;
 			}
+			
+			// Обновляем статистику по шагам и погрешностям
+
+			if (h > max_h) { // Максимальный шаг
+				max_h = h;
+				max_h_x = x;
+			}
+
+			if (h < min_h) { // Минимальный шаг
+				min_h = h;
+				min_h_x = x;
+			}
+
+			// Максимальная погрешность
+			if (current_error > max_error) {
+				max_error = current_error;
+				max_error_x = x;
+			}
+
+			if (control && max_OLP < local_error) {
+				max_OLP = local_error;
+			}
 			count_iterations++;
 		}
 		LineItem Curve1 = panel->AddCurve("v(x)", v_list, Color::Red,SymbolType::Plus);
-		LineItem Curve2 = panel->AddCurve("u(x)", u_list, Color::Blue, SymbolType::None);
+		LineItem Curve2 = panel->AddCurve("u(x)", u_list, Color::Blue, SymbolType::XCross);
 
 		// Устанавливаем интересующий нас интервал по оси X
 		panel->XAxis->Scale->Min = xmin_limit;
 		panel->XAxis->Scale->Max = xmax_limit;
-/*
-		// Устанавливаем интересующий нас интервал по оси Y
-		panel->YAxis->Scale->Min = ymin_limit;
-		panel->YAxis->Scale->Max = ymax_limit;
-*/
+
+		// Автоматическое масштабирование по Y
+		panel->YAxis->Scale->MinAuto = true;
+		panel->YAxis->Scale->MaxAuto = true;
+
+
+		
+
+		// Вывод статистики
+		textBoxStats->Clear();
+
+		//textBoxStats->SelectionFont = fontRegular;
+		textBoxStats->SelectionColor = Color::Black;
+
+		textBoxStats->AppendText(String::Format("  n = {0,-10} \n", count_iterations));
+		textBoxStats->AppendText(String::Format("  b - xn = {0,10:E6}  \n", b - x));
+
+		if (control) {
+			textBoxStats->AppendText(String::Format("  max |ОЛП| = {0,10:E6} \n", max_OLP));
+			textBoxStats->AppendText(String::Format("  Общее число делений шага (C1) = {0,-5}   \n", total_c1));
+			textBoxStats->AppendText(String::Format("  Общее число удвоений шага (C2) = {0,-5}  \n", total_c2));
+		}
+
+		textBoxStats->AppendText(String::Format("  max hi = {0,10:E6} при x = {1,8:F6}  \n", max_h, max_h_x));
+		textBoxStats->AppendText(String::Format("  min hi = {0,10:E6} при x = {1,8:F6}   \n", min_h, min_h_x));
+		textBoxStats->AppendText(String::Format("  max |ui - vi| = {0,10:E6} при x = {1,8:F6}    \n", max_error, max_error_x));
+
+
 		// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
 		// В противном случае на рисунке будет показана только часть графика, 
 		// которая умещается в интервалы по осям, установленные по умолчанию

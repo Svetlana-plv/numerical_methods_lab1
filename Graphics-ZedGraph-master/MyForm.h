@@ -87,8 +87,8 @@ namespace Graph {
 	private: System::Windows::Forms::Label^ label_c;
 	private: System::Windows::Forms::TextBox^ textBox_k2;
 	private: System::Windows::Forms::Label^ label_k2;
-	private: System::Windows::Forms::TextBox^ textBox_x0;
-	private: System::Windows::Forms::Label^ label_x0;
+
+
 	private: System::Windows::Forms::TextBox^ textBox_z0;
 
 	private: System::Windows::Forms::Label^ label_z0;
@@ -162,8 +162,6 @@ namespace Graph {
 			this->label_c = (gcnew System::Windows::Forms::Label());
 			this->textBox_k2 = (gcnew System::Windows::Forms::TextBox());
 			this->label_k2 = (gcnew System::Windows::Forms::Label());
-			this->textBox_x0 = (gcnew System::Windows::Forms::TextBox());
-			this->label_x0 = (gcnew System::Windows::Forms::Label());
 			this->textBox_z0 = (gcnew System::Windows::Forms::TextBox());
 			this->label_z0 = (gcnew System::Windows::Forms::Label());
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
@@ -479,7 +477,7 @@ namespace Graph {
 			// 
 			// zedGraphControl2
 			// 
-			this->zedGraphControl2->Location = System::Drawing::Point(577, 450);
+			this->zedGraphControl2->Location = System::Drawing::Point(15, 444);
 			this->zedGraphControl2->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->zedGraphControl2->Name = L"zedGraphControl2";
 			this->zedGraphControl2->ScrollGrace = 0;
@@ -495,7 +493,7 @@ namespace Graph {
 			// 
 			// zedGraphControl3
 			// 
-			this->zedGraphControl3->Location = System::Drawing::Point(15, 450);
+			this->zedGraphControl3->Location = System::Drawing::Point(577, 444);
 			this->zedGraphControl3->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->zedGraphControl3->Name = L"zedGraphControl3";
 			this->zedGraphControl3->ScrollGrace = 0;
@@ -537,7 +535,7 @@ namespace Graph {
 			this->textBox_k->Name = L"textBox_k";
 			this->textBox_k->Size = System::Drawing::Size(85, 26);
 			this->textBox_k->TabIndex = 38;
-			this->textBox_k->Text = L"2.0";
+			this->textBox_k->Text = L"2,0";
 			this->textBox_k->Visible = false;
 			// 
 			// label_k
@@ -558,7 +556,7 @@ namespace Graph {
 			this->textBox_c->Name = L"textBox_c";
 			this->textBox_c->Size = System::Drawing::Size(85, 26);
 			this->textBox_c->TabIndex = 40;
-			this->textBox_c->Text = L"0.15";
+			this->textBox_c->Text = L"0,15";
 			this->textBox_c->Visible = false;
 			// 
 			// label_c
@@ -579,7 +577,7 @@ namespace Graph {
 			this->textBox_k2->Name = L"textBox_k2";
 			this->textBox_k2->Size = System::Drawing::Size(85, 26);
 			this->textBox_k2->TabIndex = 42;
-			this->textBox_k2->Text = L"2.0";
+			this->textBox_k2->Text = L"2,0";
 			this->textBox_k2->Visible = false;
 			// 
 			// label_k2
@@ -592,27 +590,6 @@ namespace Graph {
 			this->label_k2->TabIndex = 41;
 			this->label_k2->Text = L"k*";
 			this->label_k2->Visible = false;
-			// 
-			// textBox_x0
-			// 
-			this->textBox_x0->Location = System::Drawing::Point(1404, 754);
-			this->textBox_x0->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->textBox_x0->Name = L"textBox_x0";
-			this->textBox_x0->Size = System::Drawing::Size(87, 26);
-			this->textBox_x0->TabIndex = 44;
-			this->textBox_x0->Text = L"0";
-			this->textBox_x0->Visible = false;
-			// 
-			// label_x0
-			// 
-			this->label_x0->AutoSize = true;
-			this->label_x0->Location = System::Drawing::Point(1365, 757);
-			this->label_x0->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label_x0->Name = L"label_x0";
-			this->label_x0->Size = System::Drawing::Size(34, 20);
-			this->label_x0->TabIndex = 43;
-			this->label_x0->Text = L"x_0";
-			this->label_x0->Visible = false;
 			// 
 			// textBox_z0
 			// 
@@ -667,8 +644,6 @@ namespace Graph {
 			this->Controls->Add(this->radioButton1);
 			this->Controls->Add(this->textBox_z0);
 			this->Controls->Add(this->label_z0);
-			this->Controls->Add(this->textBox_x0);
-			this->Controls->Add(this->label_x0);
 			this->Controls->Add(this->textBox_k2);
 			this->Controls->Add(this->label_k2);
 			this->Controls->Add(this->textBox_c);
@@ -1023,13 +998,12 @@ namespace Graph {
 			// Считывание параметров
 			double u_0 = Convert::ToDouble(textBox_u0->Text);  // начальное смещение (см)
 			double v_0 = Convert::ToDouble(textBox_z0->Text);  // начальная скорость (см/с)
-			double x_0 = Convert::ToDouble(textBox_x0->Text);  // начальное время (с)
 
 			// Параметры системы (в соответствие с заданием)
-			double m = 0.01;  // масса (Н·с²/см) - уже в нужной размерности
-			double c = 0.15;  // коэффициент демпфирования (Н·с/см²)
-			double k = 2.0;   // жесткость линейной пружины (Н/см)
-			double k2 = 2.0;  // коэффициент нелинейной пружины (Н/см³)
+			double m = 0.01*Convert::ToDouble(textBox_m->Text);  // масса (Н·с²/см) - уже в нужной размерности
+			double c = Convert::ToDouble(textBox_c->Text);  // коэффициент демпфирования (Н·с/см²)
+			double k = Convert::ToDouble(textBox_k->Text);   // жесткость линейной пружины (Н/см)
+			double k2 = Convert::ToDouble(textBox_k2->Text);  // коэффициент нелинейной пружины (Н/см³)
 
 			// Параметры интегрирования
 			bool control = checkBox1->Checked;
@@ -1278,7 +1252,7 @@ private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::E
 	label4->Visible = show;
 
 	dataGridView1->Rows->Clear();
-	textBoxStats->Clear();
+	this->textBoxStats->Text = L"Statistics will appear after clicking the Draw button...";
 
 	// Очистка графиков
 	zedGraphControl1->GraphPane->CurveList->Clear();
@@ -1305,8 +1279,6 @@ private: void show_task(bool show) {
 	label_k2->Visible = show;
 	textBox_z0->Visible = show;
 	label_z0->Visible = show;
-	textBox_x0->Visible = show;
-	label_x0->Visible = show;
 
 	Column10->Visible = !show;
 	Column11->Visible = !show;
@@ -1314,7 +1286,7 @@ private: void show_task(bool show) {
 	zedGraphControl3->Visible = show;
 
 	dataGridView1->Rows->Clear();
-	textBoxStats->Clear();
+	this->textBoxStats->Text = L"Statistics will appear after clicking the Draw button...";
 
 	// Очистка графиков
 	zedGraphControl1->GraphPane->CurveList->Clear();
